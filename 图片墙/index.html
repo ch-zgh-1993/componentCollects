@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="showList.css">
+</head>
+<body class="text-center">
+
+	<div id="app">
+	    <div class="container content-wrapper">
+	        <div class="row">
+	            <div class="card text-center content">
+	                <div class="card-header alert-success">
+	                    已标记列表
+	                </div>
+	                <div class="card-body" id="img_list">
+	                    <img-group
+	                        v-for="(img, i) in imgs"
+	                        v-bind:url="img.url"
+	                        v-bind:mark-process="img.markProcess"
+	                        v-bind:key="i"
+	                    ></img-group>
+	                </div>
+	                <div class="card-footer alert-success">
+	                    <pageination :total="model.total" :size="model.size" :page="model.page" :changge="pageFn" ></pageination>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript" src="pagination.js"></script>
+<script type="text/javascript" src="showList.js"></script>
+</body>
+</html>
